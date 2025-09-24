@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>5M Project Store</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f9f9f9;
+      margin: 0;
+      padding: 0;
+      text-align: center;
+    }
+
+    /* HEADER */
+    header {
+      background: #111;
+      color: white;
+      padding: 20px;
+    }
+
+    header img {
+      height: 80px;
+      margin-bottom: 10px;
+    }
+
+    /* PRODUCT SECTION */
+    .products {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin: 40px auto;
+      max-width: 1000px;
+    }
+
+    .product {
+      background: white;
+      border-radius: 10px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      padding: 20px;
+      width: 250px;
+      margin: 20px; /* ürünler arası boşluk */
+      transition: transform 0.2s;
+    }
+
+    .product:hover {
+      transform: translateY(-5px);
+    }
+
+    .product img {
+      height: 100px;
+      margin-bottom: 15px;
+    }
+
+    .product h3 {
+      font-size: 20px;
+      margin: 10px 0;
+    }
+
+    .product p {
+      color: #555;
+      font-size: 14px;
+      margin-bottom: 15px;
+    }
+
+    /* BUTTON */
+    .btn {
+      display: inline-block;
+      padding: 10px 20px;
+      background: #111;
+      color: white;
+      text-decoration: none;
+      border-radius: 5px;
+      transition: background 0.2s;
+    }
+
+    .btn:hover {
+      background: #333;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header>
+    <img src="logo.jpg" alt="5M Project Logo">
+    <h1>5M Project Store</h1>
+    <p>Shopier ile güvenli ödeme</p>
+  </header>
+
+  <!-- PRODUCTS -->
+  <section class="products">
+
+    <!-- Product 1 -->
+    <div class="product">
+      <img src="Fivem1.jpg" alt="FiveM Logo">
+      <h3>Fresh Fivem Account</h3>
+      <p>Hemen kullanıma hazır, güvenilir Fivem hesapları.</p>
+      <a href="https://www.shopier.com/39673367" target="_blank" class="btn">Satın Al</a>
+    </div>
+
+    <!-- Product 2 -->
+    <div class="product">
+      <img src="Rockstar_transparent.png" alt="Rockstar Logo">
+      <h3>Rockstar Activation Key</h3>
+      <p>Orijinal Rockstar Games aktivasyon anahtarı!</p>
+      <a href="https://www.shopier.com/39675180" target="_blank" class="btn">Satın Al</a>
+    </div>
+
+  </section>
+
+</body>
+</html>

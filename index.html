@@ -3,8 +3,10 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>5M Project Store — Digital Game Products</title>
-
+  <title>5M Store — Digital Game Products</title>
+  <link rel="icon" href="logo.ico?v=1" type="image/x-icon">
+  <link rel="icon" href="favicon.png?v=1" type="image/png">
+  
   <!-- SEO -->
   <meta name="description" content="Buy trusted FiveM accounts and Rockstar activation keys. Secure payments, instant delivery, professional support.">
   <meta name="keywords" content="FiveM, Rockstar, accounts, activation key, shopier, instant delivery, secure payment">
@@ -188,6 +190,23 @@
     .btn-buy:hover {
       background: #2563eb;
     }
+	
+	.btn-cart {
+  background-color: #27ae60;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  font-size: 14px;
+  font-weight: 500;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+  margin-top: 10px;
+}
+
+.btn-cart:hover {
+  background-color: #2ecc71;
+}
 
     /* Sections */
     section {
@@ -206,6 +225,57 @@
       color: #64748b;
       font-size: 15px;
     }
+	
+.price {
+  font-size: 18px;
+  font-weight: bold;
+  color: #2c3e50;
+  margin: 10px 0;
+}
+
+.price span {
+  font-size: 16px;
+  color: #888;
+}
+
+.cart-notice {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: #28a745;
+  color: white;
+  padding: 10px 15px;
+  border-radius: 8px;
+  font-weight: bold;
+  font-size: 14px;
+  box-shadow: 0 3px 6px rgba(0,0,0,0.2);
+  animation: fadeInOut 2s ease-in-out;
+}
+
+@keyframes fadeInOut {
+  0% { opacity: 0; transform: translateY(20px); }
+  10% { opacity: 1; transform: translateY(0); }
+  90% { opacity: 1; }
+  100% { opacity: 0; transform: translateY(20px); }
+}
+
+.checkout-btn {
+  background: linear-gradient(45deg, #007bff, #00d4ff);
+  color: white;
+  border: none;
+  padding: 12px 25px;
+  border-radius: 8px;
+  font-size: 18px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.checkout-btn:hover {
+  transform: scale(1.05);
+  background: linear-gradient(45deg, #0056b3, #00a0cc);
+}
+
 
     /* Footer */
     footer {
@@ -223,8 +293,8 @@
   <header>
     <div class="nav">
       <a class="brand" href="#">
-        <img src="logo.jpg" alt="5M Project Logo">
-        <h1>5M Project Store</h1>
+        <img src="logo2.jpg" alt="5M Project Logo">
+        <h1>5M Store</h1>
       </a>
       <nav>
         <a href="#products">Products</a>
@@ -250,12 +320,14 @@
           <img src="Fivem1.jpg" alt="Fresh FiveM Account">
           <h3>Fresh FiveM Account</h3>
           <p>Instantly delivered ready-to-use FiveM accounts.</p>
+		  <p class="price">$0.35 <span>/ 15₺</span></p>
           <a class="btn-buy" href="https://www.shopier.com/39673367" target="_blank">Buy Now</a>
         </article>
         <article class="card">
           <img src="Rockstar_transparent.png" alt="Rockstar Activation Key">
           <h3>Rockstar Activation Key</h3>
           <p>Official Rockstar keys with guaranteed authenticity.</p>
+		  <p class="price">$0.30 <span>/ 12₺</span></p>
           <a class="btn-buy" href="https://www.shopier.com/39675180" target="_blank">Buy Now</a>
         </article>
       </div>
@@ -276,7 +348,26 @@
   </main>
 
   <footer>
-    © 2025 5M Project Store — Secure Payment · Instant Delivery
+    © 2025 5M Store — Secure Payment · Instant Delivery
   </footer>
+  
+  <script>
+  
+function addToCart(product, price) {
+  // Sepet bilgilerini localStorage'da sakla
+  let cart = JSON.parse(localStorage.getItem('cart')) || [];
+  cart.push({ name: product, price: price });
+  localStorage.setItem('cart', JSON.stringify(cart));
+  
+ // Show notification in English
+    let notice = document.createElement("div");
+    notice.innerText = product + " added to cart!";
+    notice.className = "cart-notice";
+    document.body.appendChild(notice);
+
+    setTimeout(() => { notice.remove(); }, 2000);
+  }
+</script>
+
 </body>
 </html>
